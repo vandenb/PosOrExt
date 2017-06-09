@@ -90,7 +90,7 @@
 		        {
 		          var nameDotHtml = splitUrl[splitUrl.length - 1].split(".");
 		          /* stop die gekkenaam.html hierin en split hem op de . */
-		          partUrl = splitUrl[splitUrl.length - 2] + '--' + nameDotHtml[nameDotHtml.length - 2];
+		          partUrl = splitUrl[splitUrl.length - 2] + '-' + nameDotHtml[nameDotHtml.length - 2];
 		          /* voeg laatste deel slug en gekkenaam samen */
 		        } else {
 		          partUrl = prompt('Wat is het onderwerp waarop je je pos terug wil kunnen vinden?');
@@ -117,18 +117,17 @@
             + '<div class="explanation">Let op: voor de uitlogpagina moet je alg bij iedere cgc-groep vervangen door het equivalent.</div>';
 
 		      } else if (choice == 'social') {
-          
+
 		        divResult.innerHTML = '<div class="result">' + origUrl + '?ext=pb_social_twitter-ff_' + year + '-wk' + weekNumber + '-' + weekDay + '_' + partUrl + '<br />'
-            + origUrl + '?ext=pb_social_linkedin-ff_' + year + '-wk' + weekNumber + '-' + weekDay + '_' + partUrl + '</div>';     
-          
+            + origUrl + '?ext=pb_social_linkedin-ff_' + year + '-wk' + weekNumber + '-' + weekDay + '_' + partUrl + '</div>';
+
           } else {
-          
+
           divResult.innerHTML = '<div class="result">Daar ging iets mis.</div>';
-          
+
           }
 
 
 		    }, false);
 
 		  } // einde window.onload
-
