@@ -1,6 +1,7 @@
 		// todo: de radiobuttons verminderen door te detecteren of het aamp of ff is
 
 
+
 		// globale variabele
 		var origUrl = '';
 		var partUrl = '';
