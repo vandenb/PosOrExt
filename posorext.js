@@ -1,4 +1,6 @@
 		// todo: spaties uit partUrl kieperen, wanneer door gebruiker ingevuld
+		// verwijzing aamp-ff of andersom weghalen wanneer niet geldig
+		// cgc-gode mag eruit
 
 
 		// globale variabele
@@ -65,8 +67,9 @@
 
 		    // event handler voor de knop
 		    document.getElementById('btnKnop1').addEventListener('click', function() {
-		      origUrl = document.getElementById('txtUrl').value;
+		      fillInUrl = document.getElementById('txtUrl').value;    // hier komt de url binnen!
 		      choice = document.querySelectorAll('input[type="radio"][name="radioGroup"]:checked')[0].value;
+					origUrl = fillInUrl.trim();  // spatie(s) aan het eind van de url worden weggekieperd
 
 		      /*  ===== HIER WORDT HET LAATST DEEL VAN DE URL BEHANDELD  ===== */
 
@@ -106,15 +109,29 @@
 
 		      /* ====== HIER GAAN WE DE COMPLETE URLS TONEN ===== */
 
+ 					// ff-aamp" />Van ff naar aamp
+					//   "extern-aamp"  />Van een externe site of banner naar aamp
+					//"extern-ff" />Van een externe site of banner naar ff
 
 		      if (choice == 'aamp-ff-ct-home') {
 
-		        divResult.innerHTML = '<div class="result">' + origUrl + '?pos=pb_aamp-ff_ct-home_' + year + '-wk' + weekNumber + '-' + weekDay + '_' + partUrl + '</div>';
+		        divResult.innerHTML = '<div class="result">' + origUrl + '?pos=pb_aamp-ff_home_' + year + '-wk' + weekNumber + '-' + weekDay + '_' + partUrl + '</div>';
+
+					} else if (choice == 'ff-aamp') {
+
+						divResult.innerHTML = '<div class="result">' + origUrl + '?pos=pb_ff-aamp_' + year + '-wk' + weekNumber + '-' + weekDay + '_' + partUrl + '</div>';
 
 		      } else if (choice == 'aamp-ff-uitlog') {
 
-		        divResult.innerHTML = '<div class="result">' + origUrl + '?pos=pb_aamp-ff_uitlog_cgc-alg_' + year + '-wk' + weekNumber + '-' + weekDay + '_' + partUrl + '</div>'
-            + '<div class="explanation">Let op: voor de uitlogpagina moet je alg bij iedere cgc-groep vervangen door het equivalent.</div>';
+		        divResult.innerHTML = '<div class="result">' + origUrl + '?pos=pb_aamp-ff_uitlog_' + year + '-wk' + weekNumber + '-' + weekDay + '_' + partUrl + '</div>';
+
+					} else if (choice == 'extern-aamp') {
+
+						divResult.innerHTML = '<div class="result">' + origUrl + '?pos=pb_extern-aamp_' + year + '-wk' + weekNumber + '-' + weekDay + '_' + partUrl + '</div>';
+
+					} else if (choice == 'extern-ff') {
+
+						divResult.innerHTML = '<div class="result">' + origUrl + '?pos=pb_extern-ff_' + year + '-wk' + weekNumber + '-' + weekDay + '_' + partUrl + '</div>';
 
 		      } else if (choice == 'social') {
 
