@@ -1,5 +1,6 @@
-		// todo: de radiobuttons verminderen door te detecteren of het aamp of ff is
-
+		// todo: spaties uit partUrl kieperen, wanneer door gebruiker ingevuld
+		// verwijzing aamp-ff of andersom weghalen wanneer niet geldig
+		// cgc-gode mag eruit
 
 
 		// globale variabele
