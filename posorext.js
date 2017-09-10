@@ -1,6 +1,6 @@
-		// todo: spaties uit partUrl kieperen, wanneer door gebruiker ingevuld
+		// todo:
 		// verwijzing aamp-ff of andersom weghalen wanneer niet geldig
-		// cgc-gode mag eruit
+		// smarp
 
 
 		// globale variabele
@@ -135,8 +135,8 @@
 
 		      } else if (choice == 'social') {
 
-		        divResult.innerHTML = '<div class="result">' + origUrl + '?ext=pb_social_twitter-ff_' + year + '-wk' + weekNumber + '-' + weekDay + '_' + partUrl + '<br />'
-            + origUrl + '?ext=pb_social_linkedin-ff_' + year + '-wk' + weekNumber + '-' + weekDay + '_' + partUrl + '</div>';
+		        divResult.innerHTML = '<div class="result">' + origUrl + '?ext=tw_pb_social_twitter-ff_' + year + '-wk' + weekNumber + '-' + weekDay + '_' + partUrl + '<br />'
+            + origUrl + '?ext=li_pb_social_linkedin-ff_' + year + '-wk' + weekNumber + '-' + weekDay + '_' + partUrl + '</div>';
 
           } else {
 
