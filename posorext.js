@@ -136,7 +136,8 @@
 		      } else if (choice == 'social') {
 
 		        divResult.innerHTML = '<div class="result">' + origUrl + '?ext=tw_pb_social_twitter-ff_' + year + '-wk' + weekNumber + '-' + weekDay + '_' + partUrl + '<br />'
-            + origUrl + '?ext=li_pb_social_linkedin-ff_' + year + '-wk' + weekNumber + '-' + weekDay + '_' + partUrl + '</div>';
+						+ origUrl + '?ext=li_pb_social_linkedin-ff_' + year + '-wk' + weekNumber + '-' + weekDay + '_' + partUrl + '<br />' 
+						+ origUrl + '?ext=smarp_pb_social_smarp-ff_' + year + '-wk' + weekNumber + '-' + weekDay + '_' + partUrl + '</div>';
 
           } else {
 
