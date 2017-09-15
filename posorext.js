@@ -1,6 +1,6 @@
 		// todo:
 		// verwijzing aamp-ff of andersom weghalen wanneer niet geldig
-		// smarp
+		
 
 
 		// globale variabele
