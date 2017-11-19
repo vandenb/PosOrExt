@@ -1,6 +1,6 @@
 		// todo:
 		// verwijzing aamp-ff of andersom weghalen wanneer niet geldig
-		
+		// smarp
 
 
 		// globale variabele
@@ -64,6 +64,15 @@
 
 		    /*  ===== EINDE DATUMDEEL ===== */
 
+							
+			/*	var timeStamped = function() {
+					if (isChecked === true) {
+					 timeStamped = 'ja';
+				} else if {
+					 timeStamped = 'nee';
+				}
+			} */
+
 
 		    // event handler voor de knop
 		    document.getElementById('btnKnop1').addEventListener('click', function() {
@@ -71,6 +80,13 @@
 		      choice = document.querySelectorAll('input[type="radio"][name="radioGroup"]:checked')[0].value;
 					origUrl = fillInUrl.trim();  // spatie(s) aan het eind van de url worden weggekieperd
 
+					var isChecked = document.querySelectorAll('input[name="mycheckbox"]:checked').length === 0 ? false : true; // wil de gebruiker een timestamp?
+					
+					if (isChecked === true) {
+						timeStamped = year + '-wk' + weekNumber + '-' + weekDay + '_';
+				 } else {
+						timeStamped = '';
+				 }
 		      /*  ===== HIER WORDT HET LAATST DEEL VAN DE URL BEHANDELD  ===== */
 
 		      if (origUrl.includes("financialfocus")) { /* test op FF */
@@ -115,29 +131,29 @@
 
 		      if (choice == 'aamp-ff-ct-home') {
 
-		        divResult.innerHTML = '<div class="result">' + origUrl + '?pos=pb_aamp-ff_home_' + year + '-wk' + weekNumber + '-' + weekDay + '_' + partUrl + '</div>';
+		        divResult.innerHTML = '<div class="result">' + origUrl + '?pos=pb_aamp-ff_home_' + timeStamped + partUrl + '</div>';
 
 					} else if (choice == 'ff-aamp') {
 
-						divResult.innerHTML = '<div class="result">' + origUrl + '?pos=pb_ff-aamp_' + year + '-wk' + weekNumber + '-' + weekDay + '_' + partUrl + '</div>';
+						divResult.innerHTML = '<div class="result">' + origUrl + '?pos=pb_ff-aamp_' + timeStamped + partUrl + '</div>';
 
 		      } else if (choice == 'aamp-ff-uitlog') {
 
-		        divResult.innerHTML = '<div class="result">' + origUrl + '?pos=pb_aamp-ff_uitlog_' + year + '-wk' + weekNumber + '-' + weekDay + '_' + partUrl + '</div>';
+		        divResult.innerHTML = '<div class="result">' + origUrl + '?pos=pb_aamp-ff_uitlog_' + timeStamped + partUrl + '</div>';
 
 					} else if (choice == 'extern-aamp') {
 
-						divResult.innerHTML = '<div class="result">' + origUrl + '?pos=pb_extern-aamp_' + year + '-wk' + weekNumber + '-' + weekDay + '_' + partUrl + '</div>';
+						divResult.innerHTML = '<div class="result">' + origUrl + '?pos=pb_extern-aamp_' + timeStamped + partUrl + '</div>';
 
 					} else if (choice == 'extern-ff') {
 
-						divResult.innerHTML = '<div class="result">' + origUrl + '?pos=pb_extern-ff_' + year + '-wk' + weekNumber + '-' + weekDay + '_' + partUrl + '</div>';
+						divResult.innerHTML = '<div class="result">' + origUrl + '?pos=pb_extern-ff_' + timeStamped + partUrl + '</div>';
 
 		      } else if (choice == 'social') {
 
-		        divResult.innerHTML = '<div class="result">' + origUrl + '?ext=tw_pb_social_twitter-ff_' + year + '-wk' + weekNumber + '-' + weekDay + '_' + partUrl + '<br />'
-						+ origUrl + '?ext=li_pb_social_linkedin-ff_' + year + '-wk' + weekNumber + '-' + weekDay + '_' + partUrl + '<br />' 
-						+ origUrl + '?ext=smarp_pb_social_smarp-ff_' + year + '-wk' + weekNumber + '-' + weekDay + '_' + partUrl + '</div>';
+		        divResult.innerHTML = '<div class="result">' + origUrl + '?ext=tw_pb_social_twitter-ff_' + timeStamped + partUrl + '<br />'
+						+ origUrl + '?ext=li_pb_social_linkedin-ff_' + timeStamped + partUrl + '<br />' 
+						+ origUrl + '?ext=smarp_pb_social_smarp-ff_' + timeStamped + partUrl + '</div>';
 
           } else {
 
