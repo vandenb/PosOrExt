@@ -6,6 +6,7 @@
 		// globale variabele
 		var origUrl = '';
 		var partUrl = '';
+	
 
 
 
@@ -90,8 +91,10 @@
 		      /*  ===== HIER WORDT HET LAATST DEEL VAN DE URL BEHANDELD  ===== */
 
 		      if (origUrl.includes("financialfocus")) { /* test op FF */
-		        var splitUrl = origUrl.split("/"); /* split op de slash, maak een array  */
-		        if (splitUrl[splitUrl.length - 1] === '') { /* klopt het?  urls van ff eindigen op / en die is nu weg */
+						var splitUrl = origUrl.split("/"); /* split op de slash, maak een array  */
+						var ffOrAamp = 'ff';
+						if (splitUrl[splitUrl.length - 1] === '') { /* klopt het?  urls van ff eindigen op / en die is nu weg */
+							
 		          partUrl = splitUrl[splitUrl.length - 2]; /* pak dan het eennalaatste ding in de array, */
 		        } else {
 		          partUrl = prompt('Wat is het onderwerp waarop je je pos terug wil kunnen vinden?');
@@ -99,6 +102,7 @@
 		      } else if (origUrl.includes("abnamro") === true && (origUrl.includes("financialfocus") === false))
 		      /* test op aamp zonder ff   */
 		      {
+						var ffOrAamp = 'aamp';
 		        var splitUrl = origUrl.split("/"); /* split op de slash, maak een array  */
 		        if (splitUrl[splitUrl.length - 1] === '') { /* dan is het een url zonder x.html */
 		          partUrl = splitUrl[splitUrl.length - 2]; /* pak dan het eennalaatste ding in de array*/
@@ -143,17 +147,17 @@
 
 					} else if (choice == 'extern-aamp') {
 
-						divResult.innerHTML = '<div class="result">' + origUrl + '?pos=pb_extern-aamp_' + timeStamped + partUrl + '</div>';
+						divResult.innerHTML = '<div class="result">' + origUrl + '?ext=pb_extern-aamp_' + timeStamped + partUrl + '</div>';
 
 					} else if (choice == 'extern-ff') {
 
-						divResult.innerHTML = '<div class="result">' + origUrl + '?pos=pb_extern-ff_' + timeStamped + partUrl + '</div>';
+						divResult.innerHTML = '<div class="result">' + origUrl + '?ext=pb_extern-ff_' + timeStamped + partUrl + '</div>';
 
 		      } else if (choice == 'social') {
 
-		        divResult.innerHTML = '<div class="result">' + origUrl + '?ext=tw_pb_social_twitter-ff_' + timeStamped + partUrl + '<br />'
-						+ origUrl + '?ext=li_pb_social_linkedin-ff_' + timeStamped + partUrl + '<br />' 
-						+ origUrl + '?ext=smarp_pb_social_smarp-ff_' + timeStamped + partUrl + '</div>';
+		        divResult.innerHTML = '<div class="result">' + origUrl + '?ext=tw_pb_social_twitter-' + ffOrAamp + '_' + timeStamped + partUrl + '<br />'
+						+ origUrl + '?ext=li_pb_social_linkedin-' + ffOrAamp + '_' + timeStamped + partUrl + '<br />' 
+						+ origUrl + '?ext=smarp_pb_social_smarp-f' + ffOrAamp + '_' + timeStamped + partUrl + '</div>';
 
           } else {
 
