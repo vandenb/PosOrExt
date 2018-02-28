@@ -157,7 +157,7 @@
 
 		        divResult.innerHTML = '<div class="result">' + origUrl + '?ext=tw_pb_social_twitter-' + ffOrAamp + '_' + timeStamped + partUrl + '<br />'
 						+ origUrl + '?ext=li_pb_social_linkedin-' + ffOrAamp + '_' + timeStamped + partUrl + '<br />' 
-						+ origUrl + '?ext=smarp_pb_social_smarp-f' + ffOrAamp + '_' + timeStamped + partUrl + '</div>';
+						+ origUrl + '?ext=smarp_pb_social_smarp-' + ffOrAamp + '_' + timeStamped + partUrl + '</div>';
 
           } else {
 
